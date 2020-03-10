@@ -1,14 +1,15 @@
 #!/usr/bin/php
 <?PHP
 
-while ($answer != "^D")
+while (1)
 {
     echo "Enter a number: ";
-    if (($answer = trim(fgets(STDIN))) == NULL)
-    {
-        echo "^D\n";
+    $str = fopen("php://stdin", "r");
+    $tmp = fgets($str);
+    if ($tmp == NULL)
         break ;
-    }
+    $answer = trim($tmp);
+    fclose($str);
     if (is_numeric($answer))
     {
         if ($answer % 2 == 0)
@@ -19,5 +20,6 @@ while ($answer != "^D")
     else
         echo "'$answer' is not a number\n";
 }
+echo "\n";
 
 ?>
