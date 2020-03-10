@@ -3,7 +3,16 @@
 
 function ft_split($string)
 {
-    return $arr = preg_split('/[\s]+/', $string);
+    $arr = preg_split('/[\s]+/', $string);
+    foreach ($arr as $key => $value)
+    {
+        if ($value == "")
+        {
+            unset($arr[$key]);
+        }
+    }
+    sort($arr);
+    return $arr;
 }
 
 ?>
