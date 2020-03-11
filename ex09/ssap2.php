@@ -1,6 +1,8 @@
 #!/usr/bin/php
 <?PHP
 
+if ($argc < 2)
+    return;
 unset($argv[0]);
 $arr = array();
 $final = array();
